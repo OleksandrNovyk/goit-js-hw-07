@@ -34,19 +34,22 @@ function createGalleryItemsMarkup(items) {
     }
   );
 
-  function onEscKeyPress(event) {
-    if (event.code !== 'Escape') 
-    return;
-    instance.close();
-  };
-
   function onImgClick(event) {
     event.preventDefault();
     const datasetSource = event.target.dataset.source;
+    console.log(datasetSource);
     if (!datasetSource) 
     return;
     instance.element().querySelector('img').src = datasetSource;
     instance.show();
   };
 
+  function onEscKeyPress(event) {
+    if (event.code !== 'Escape') 
+    return;
+    instance.close();
+  };
+
 console.log(galleryItems);
+
+
